@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:param name="page_name" value="Acceuil" />
+<h:panelGroup>
+<h:form>
+
+ text :<h:outputText value="Bonjour #{serviceBean.getLogin()}"/>
+
+
+<h:dataTable value="#{serviceBean.zones}" var="e" border="1">
+
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="dimens" />
+					</f:facet>
+
+					<h:outputText value="#{e.dimension}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="REf" />
+					</f:facet>
+
+					<h:outputText value="#{e.ref}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="REsponsab" />
+					</f:facet>
+
+					<h:outputText value="#{e.getPerso().getNom()}" />
+				</h:column>
+
+</h:dataTable>
+
+
+
+</h:form>
+</h:panelGroup>
+</ui:composition>
